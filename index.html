@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary SEO -->
+    <title>LUMIÈRE BEAUTY | Premium Beauty Salon</title>
+    <meta name="description" content="A premium beauty salon website template featuring beauty services, expert stylists, packages and online appointment booking." />
+    <meta name="keywords" content="beauty salon, luxury parlour, hair styling, skin treatments, bridal beauty, nail care, facial, spa rituals" />
+    <meta name="author" content="LUMIÈRE BEAUTY" />
+    <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="LUMIÈRE BEAUTY | Premium Beauty Salon" />
+    <meta property="og:description" content="A premium beauty salon website template featuring beauty services, expert stylists, packages and online appointment booking." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LUMIÈRE BEAUTY | Premium Beauty Salon" />
+    <meta name="twitter:description" content="A premium beauty salon website template featuring beauty services, expert stylists, packages and online appointment booking." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Anti-Flash Script for Theme -->
+    <script>
+      (function() {
+        try {
+          const stored = localStorage.getItem('theme');
+          if (stored === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else if (stored === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // Note: Light mode is default per requirements unless user/system specifically requests dark
+            // But requirement states:
+            // 1. User-selected theme
+            // 2. Saved theme
+            // 3. System preference
+            // 4. Light mode fallback
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-ivory-50 text-charcoal-800 dark:bg-charcoal-900 dark:text-ivory-100 transition-colors duration-300 antialiased selection:bg-champagne-300 selection:text-charcoal-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

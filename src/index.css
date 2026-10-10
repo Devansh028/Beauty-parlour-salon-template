@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #FAF7F2;
+    --bg-surface: #FFFFFF;
+    --bg-surface-elevated: #F8F5EE;
+    --text-primary: #1D1A18;
+    --text-secondary: #5F5850;
+    --text-muted: #847D74;
+    --border-subtle: #EBE3DC;
+    --accent-gold: #CBB270;
+  }
+
+  .dark {
+    --bg-primary: #121110;
+    --bg-surface: #1D1A18;
+    --bg-surface-elevated: #282420;
+    --text-primary: #FAF7F2;
+    --text-secondary: #D5D1CB;
+    --text-muted: #B0AAA2;
+    --border-subtle: #2E2925;
+    --accent-gold: #DFCD9B;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DDD2C7;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3A3530;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #CBB270;
+}
+
+/* Smooth motion & accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Glassmorphism */
+.glass-nav {
+  background: rgba(250, 247, 242, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.dark .glass-nav {
+  background: rgba(18, 17, 16, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass-card {
+  background: rgba(29, 26, 24, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Subtle image overlay effect */
+.editorial-img-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.editorial-img-container img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-img-container:hover img {
+  transform: scale(1.04);
+}
